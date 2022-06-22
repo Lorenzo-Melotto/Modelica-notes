@@ -6,28 +6,20 @@
 #include<stdio.h>
 #include<time.h>
 
-double myrandom()
-{
-static int i = 0;
-time_t t;
+double myrandom() {
+  static int i = 0; // static in quanto deve mantenere la memoria con diverse chiamate
+  time_t t;
 
-// just for test
-
-  if (i == 0)
+  // just for test
+  if (i == 0){
     /* first time rand is called  */
-    {
-      i = 1;
+    i = 1;
      
-      /* Intializes random number generator */
-      srand((unsigned) time(&t));
-      
-    }
+    /* Intializes random number generator */
+    srand((unsigned) time(&t));
+  }	
 		
-		
-   return (  ((double) rand())/((double) RAND_MAX) );
-
-
+  return (((double) rand()) / ((double) RAND_MAX));
 }  /*  myrandom()  */
-
 
 #endif

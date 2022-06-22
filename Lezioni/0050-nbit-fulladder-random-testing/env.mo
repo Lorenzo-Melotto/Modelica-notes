@@ -1,5 +1,4 @@
 class Environment
-
    parameter Real T = 1;
 
    SysParameters p;
@@ -15,17 +14,14 @@ class Environment
       end for;
       carry_in = true;
 
-
    algorithm
-
       when sample(0, T) then
-
+         // for per l'assegnazione dei valori random agli array booleani a e b
          for i in 1:p.n loop
             a[i] := if (myrandom() <= 0.5) then true else false; // per assegnare il valore sfrutto myrandom e con il 50% di probabilità avrò true
             b[i] := if (myrandom() <= 0.5) then true else false; // per assegnare il valore sfrutto myrandom e con il 50% di probabilità avrò true
          end for;
          carry_in := if (myrandom() <= 0.5) then true else false; // per assegnare il valore sfrutto myrandom e con il 50% di probabilità avrò true
-
       end when;
 
 end Environment;

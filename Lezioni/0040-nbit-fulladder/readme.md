@@ -9,4 +9,4 @@ Ciò che voglio ottenere è il modello di n full adder messi in fila, così da p
 
 Lo schema è il seguente:
 
-![ alt text ](schema.png)
+![ alt text ](schema_leggibile.png)
