@@ -1,9 +1,9 @@
 
 function myrandom
-//input Integer seed;
-output Real result;
+  //input Integer seed;
+  output Real result; 
 
-external "C" result = myrandom();
+  external "C" result = myrandom();
 
   annotation(Include = "#include \"myextlib.c\"");
 

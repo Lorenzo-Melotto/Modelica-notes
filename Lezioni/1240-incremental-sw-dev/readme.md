@@ -2,7 +2,7 @@
 
 Con lo stesso approccio di 1200 posso modellare anche lo sviluppo software incrementale.
 
-Immaginiamo lo sviluppo incrementale come composto da tante micro-delivery su cui vado ad iterare. Se io facessi una catena di Markov che modella questo, sarebbe molto difficile crearla.
+Immaginiamo lo sviluppo incrementale come composto da tante **micro-delivery** su cui vado ad iterare. Se io facessi una catena di Markov che modella questo, sarebbe molto difficile crearla.
 
 Esiste quindi un trucco: utilizzare le variabili.
 

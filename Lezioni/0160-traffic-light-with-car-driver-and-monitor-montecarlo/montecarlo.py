@@ -17,7 +17,7 @@ omc.sendExpression("cd()")
 # carico i file, utilizzo la funzione runScript che permette di caricare load.mos in Modelica
 omc.sendExpression("runScript(\"load.mos\")")
 
-# compilo
+# compilazione del modello senza esecuzione
 omc.sendExpression("buildModel(System, stopTime=2)")
 #omc.sendExpression("getErrorString()")
 
@@ -30,6 +30,7 @@ Num_Samples = 10 # numero di campioni, più è grande più siamo sicuri che non 
 # seed random number generator
 np.random.seed(1)
 
+# variabili per il conteggio del numero di pass e fail rispetto al monitor
 num_pass = 0
 num_fail = 0
 y = 0.0
@@ -38,7 +39,8 @@ with open ("log", 'wt') as f: # utile per il debug
         f.write("Begin log"+"\n")
         f.flush()
         os.fsync(f)
-        
+
+# file dove vengono scritti i parametri con cui i test sono falliti o superati
 with open ("output.txt", 'wt') as f: # importante per vedere l'esito dei test
         f.write("Outcomes"+"\n\n")
         f.flush()

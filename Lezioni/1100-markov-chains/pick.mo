@@ -6,8 +6,8 @@ function  pick
   output Integer w;  // next state
 
   protected // con protected indico le mie variabili locali
-  Integer i;
-  Real y;
+    Integer i;
+    Real y;
 
   algorithm
     i := 1; 
@@ -23,6 +23,7 @@ function  pick
       // se z è invece maggiore di 0.2, entro nel while e incremento i, per esplorare lo stato successivo della matrice
       i := i + 1;
       y := y + A[x, i]; // aggiorno y come ho fatto nella riga 14. Quindi in questo caso avrebbe il valore della matrice in posizione [1,2], cioè 0.4 più il valore precedente, quindi 0.6 (0.2 + 0.4)
+      /* y viene aggiornato finché z è minore di y oppure siamo arrivati all'ultimo stato nella catena */
     end while;
 
     w := i;
