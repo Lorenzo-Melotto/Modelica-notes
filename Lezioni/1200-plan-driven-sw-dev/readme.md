@@ -3,6 +3,7 @@
 Posso utilizzare Modelica per simulare le fasi dello sviluppo software plan driver.
 
 Questo tipo di sviluppo è composto da 8 fasi:
+
 1. requirement phase
 2. design phase
 3. implementation phase
@@ -14,12 +15,14 @@ Questo tipo di sviluppo è composto da 8 fasi:
 
 Il monitor di questo modello è diverso dal solito. Non è un monitor che utilizzo per verificare una proprietà del tipo vero/falso, ma è un monitor che calcola il **valore atteso**, che fa parte dei requisiti non funzionali. Devo calcolare il tempo atteso in cui arrivo allo stato numero 8 della catena di Markov.
 
-# Differenza tra when initial() e initial equation
-Se io uso le equazioni faccio la **initial equation** che vale al tempo 0. Poi nella equation avrò una equazione che sarà valida per tutti i successivi istanti di tempo. Serve se una variabile ad esempio è definita come un'equazione differenziale, quindi con der(). Vedi 0120, in particolare **car.mo**
+# Differenza tra `when initial()` e `initial equation`
 
-La **when initial()** si utilizza in un ambiente **algorithm** e **elsewhen** specifica il comportamento nei successivi istanti di tempo.
+Se io uso le **equazioni** faccio la `initial equation` che vale al tempo 0. Poi nella `equation` avrò una equazione che sarà valida per tutti i successivi istanti di tempo. Serve se una variabile ad esempio è definita come un'equazione differenziale, quindi con `der()`. Vedi 0120, in particolare **car.mo**
+
+La `when initial()` si utilizza in un ambiente `algorithm` e `elsewhen` specifica il comportamento nei successivi istanti di tempo.
 
 # Valore atteso del tempo di soggiorno
+
 Supponiamo di essere in uno stato della catena di Markov, ho una probabilità $p$ di rimanere sullo stato corrente e una probabilità $1-p$ di passare ad un altro stato, pari alla somma di tutti gli archi uscenti che non mi portano allo stato corrente.
 
 Per calcolare il valore atteso del tempo di soggiorno, devo calcolare il numero di volte in cui sono nel loop.
@@ -58,7 +61,7 @@ $$
 
 Con $p<1$, perché se $p$ fosse 1, non uscirei mai dallo stato corrente.
 
-Tra le serie note c'è la seguente: 
+Tra le serie note c'è la seguente:
 
 $$
 \sum\limits_{k=0}^{+\infty}p^k = A = \frac{1}{1-p}
